@@ -1,6 +1,11 @@
 # start R from: ~\iNZightVIT-dev\R\bin\Rscript.exe
 
-.libPaths(file.path("~", "iNZightVIT-dev", "library"))
+if (dir.exists(file.path("~", "iNZightVIT-dev", "library"))) {
+    .libPaths(file.path("~", "iNZightVIT-dev", "library"))
+} else {
+    .libPaths(file.path("~", "iNZightVIT", "library"))
+}
+
 library(iNZight)
 # install.packages("magick")
 
