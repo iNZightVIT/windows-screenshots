@@ -22,6 +22,7 @@ capture <- function(file) {
     )
     if (!dir.exists(dir)) dir.create(dir, recursive = TRUE)
 
+    Sys.sleep(0.5)
     s <- system(sprintf("nircmd.exe savescreenshotwin %s", name))
     invisible(s)
 }

@@ -6,11 +6,9 @@ Sys.sleep(1)
 
 ui$ctrlWidget$V1box$set_value("Infantmortality")
 ui$ctrlWidget$V2box$set_value("ChildrenPerWoman")
-Sys.sleep(0.1)
 capture("01")
 
 ui$ctrlWidget$G1box$set_value("Year_cat")
-Sys.sleep(0.1)
 capture("02")
 
 ui$getActiveDoc()$setSettings(
