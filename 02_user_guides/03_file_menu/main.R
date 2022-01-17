@@ -12,8 +12,11 @@ RGtk2::gtkMenuItemSelect(file_menu)
 capture("00_file_menu")
 RGtk2::gtkMenuItemDeselect(file_menu)
 
+# crop image
+crop("00_file_menu", 10, 410, y1 = 250)
+
 OODIR <- DIR
-for (file in files) {
+for (file in files[1]) {
     DIR <- OODIR
     source(file)
 }
