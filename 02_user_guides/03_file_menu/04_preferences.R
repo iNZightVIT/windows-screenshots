@@ -1,5 +1,5 @@
 # load data
-DIR <- file.path(DIR, "preferences")
+DIR <- file.path(DIR, "04_preferences")
 
 w <- iNZight:::iNZPrefsWin$new(ui)
 capture("01_general")
