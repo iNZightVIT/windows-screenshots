@@ -30,7 +30,7 @@ capture("00_inzight_init")
 
 # ----- landing page
 sections <- list.files(pattern = "[0-9]{2}\\_.+")
-for (section in sections[2]) {
+for (section in sections) {
     DIR <- section
     source(file.path(DIR, "main.R"))
 }
