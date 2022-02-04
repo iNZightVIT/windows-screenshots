@@ -6,7 +6,7 @@ Sys.sleep(1)
 
 w <- iNZight:::iNZExportWin$new(ui)
 capture("01_export_win")
-add_rect("01_export_win", 518, 45, 678, 70,
+add_rect("01_export_win", 511, 45, 671, 70,
     border_width = 3L
 )
 
@@ -16,7 +16,7 @@ add_arrow("02_export_path_set", 540, 92, 420,
     arrow_width = 5L,
     head_length = 0.3
 )
-add_rect("02_export_path_set", 435, 191, 551, 220,
+add_rect("02_export_path_set", 428, 191, 544, 220,
     border_width = 3L
 )
 

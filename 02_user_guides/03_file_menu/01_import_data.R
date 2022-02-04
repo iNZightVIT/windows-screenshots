@@ -17,7 +17,7 @@ w$loadURL$set_value(TRUE)
 capture("03_import_url")
 crop("03_import_url", y1 = 200)
 
-add_arrow("03_import_url", 45, 115, 90,
+add_arrow("03_import_url", 45, 115, 83,
     arrow_width = 5L,
     head_length = 0.3
 )

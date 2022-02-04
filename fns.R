@@ -12,7 +12,17 @@ capture <- function(file) {
 
     Sys.sleep(0.5)
     s <- system(sprintf("nircmd.exe savescreenshotwin %s", name))
-    invisible(s)
+    Sys.sleep(0.01)
+
+    img <- magick::image_read(name)
+    img_info <- magick::image_info(img)
+    crop(file,
+        x0 = 7,
+        x1 = img_info$width[1] - 8,
+        y0 = 0,
+        y1 = img_info$height[1] - 8
+    )
+    invisible(NULL)
 }
 
 dir_to_gif <- function(...) {

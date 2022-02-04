@@ -13,7 +13,7 @@ capture("00_dataset_menu")
 RGtk2::gtkMenuItemDeselect(dataset_menu)
 
 # crop image
-crop("00_dataset_menu", 10, 260, y1 = 382)
+crop("00_dataset_menu", 3, 253, y1 = 382)
 
 OODIR <- DIR
 for (file in files) {
