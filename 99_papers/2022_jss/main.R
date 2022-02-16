@@ -41,6 +41,7 @@ if (!file.exists("Gapminder.csv"))
 w <- iNZight:::iNZImportWin(ui)
 w$fname <- "Gapminder.csv"
 w$setfile()
+Sys.sleep(1)
 visible(w$advGp) <- TRUE
 
 capture("02_import_data")
@@ -174,7 +175,7 @@ tsMod$close()
 # if (!requireNamespace("iNZightMaps"))
 #     install.packages("iNZightMaps",
 #         repos = c(
-#             options()$repos, 
+#             options()$repos,
 #             "https://r.docker.stat.auckland.ac.nz"
 #         )
 #     )
@@ -206,8 +207,8 @@ add_rect(
     border_col = NA,
     fill_col = "#999999ee"
 )
-add_text("10_inzight_classes", 
-    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2], 
+add_text("10_inzight_classes",
+    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2],
     "iNZMenuBarWidget",
     font_col = "black", font_size = 1.2)
 
@@ -218,8 +219,8 @@ add_rect(
     border_col = NA,
     fill_col = "#999999ee"
 )
-add_text("10_inzight_classes", 
-    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2], 
+add_text("10_inzight_classes",
+    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2],
     "iNZDataNameWidget",
     font_col = "black", font_size = 1.2)
 
@@ -230,8 +231,8 @@ add_rect(
     border_col = NA,
     fill_col = "#999999ee"
 )
-add_text("10_inzight_classes", 
-    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2], 
+add_text("10_inzight_classes",
+    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2],
     "iNZDataToolbar",
     font_col = "black", font_size = 1.2)
 
@@ -242,8 +243,8 @@ add_rect(
     border_col = NA,
     fill_col = "#999999ee"
 )
-add_text("10_inzight_classes", 
-    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2], 
+add_text("10_inzight_classes",
+    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2],
     "iNZDataViewWidget",
     font_col = "black", font_size = 1.2)
 
@@ -254,8 +255,8 @@ add_rect(
     border_col = NA,
     fill_col = "#999999ee"
 )
-add_text("10_inzight_classes", 
-    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2], 
+add_text("10_inzight_classes",
+    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2],
     "iNZControlWidget",
     font_col = "black", font_size = 1.2)
 
@@ -266,8 +267,8 @@ add_rect(
     border_col = NA,
     fill_col = "#999999ee"
 )
-add_text("10_inzight_classes", 
-    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2], 
+add_text("10_inzight_classes",
+    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2],
     "iNZPlotWidget",
     font_col = "black", font_size = 1.2)
 
@@ -278,8 +279,8 @@ add_rect(
     border_col = NA,
     fill_col = "#999999ee"
 )
-add_text("10_inzight_classes", 
-    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2], 
+add_text("10_inzight_classes",
+    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2],
     "iNZPlotToolbar",
     font_col = "black", font_size = 1.2)
 
@@ -290,7 +291,7 @@ add_rect(
     border_col = NA,
     fill_col = "#999999ee"
 )
-add_text("10_inzight_classes", 
-    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2], 
+add_text("10_inzight_classes",
+    (r[3]-r[1])/2+r[1], (r[4]-r[2])/2+r[2],
     "iNZCodePanel",
     font_col = "black", font_size = 1.2)
