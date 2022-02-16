@@ -85,7 +85,7 @@ add_rect <- function(file, x0, y0, x1, y1,
     img_e <- magick::image_draw(img)
     rect(x0, y0, x1, y1,
         border = border_col, lwd = border_width,
-        bg = fill_col
+        col = fill_col
     )
     dev.off()
     magick::image_write(img_e, name)
@@ -122,7 +122,7 @@ add_arrow <- function(file, x0, y0, x1 = x0, y1 = y0,
 add_circle <- function(file, x0, y0, radius,
                        col = "red",
                        width = 2L,
-                       fill = NA) {
+                       fill_col = NA) {
     if (missing(file)) stop("You need to specify a path")
     dir <- "images"
     if (DIR != "") dir <- file.path(dir, DIR)
@@ -139,7 +139,8 @@ add_circle <- function(file, x0, y0, radius,
         pch = 21,
         lwd = width,
         col = col,
-        cex = radius
+        cex = radius,
+        bg = fill_col
     )
     dev.off()
     magick::image_write(img_e, name)

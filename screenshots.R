@@ -3,7 +3,10 @@ options(repos = "https://cran.rstudio.com")
 if (!requireNamespace("jsonlite")) install.packages("jsonlite")
 if (!requireNamespace("rlang")) install.packages("rlang")
 
-if (dir.exists(file.path("~", "iNZightVIT-dev", "library"))) {
+INZIGHT_DIR <- file.path("~", "iNZightVIT")
+if (!is.null(INZIGHT_DIR) && dir.exists(INZIGHT_DIR)) {
+    .libPaths(file.path(INZIGHT_DIR, "library"))
+} else if (dir.exists(file.path("~", "iNZightVIT-dev", "library"))) {
     .libPaths(file.path("~", "iNZightVIT-dev", "library"))
 } else {
     .libPaths(file.path("~", "iNZightVIT", "library"))
@@ -30,7 +33,8 @@ if (ui$preferences$dev.features ||
 capture("00_inzight_init")
 
 # ----- landing page
-sections <- list.files(pattern = "[0-9]{2}\\_.+")
+#sections <- list.files(pattern = "[0-9]{2}\\_.+")
+sections <- list.files(pattern = "[9]{2}\\_.+")
 for (section in sections) {
     DIR <- section
     source(file.path(DIR, "main.R"))
