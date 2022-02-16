@@ -102,6 +102,8 @@ size(w$win) <- c(850, 790)
 
 capture("04_get_inference")
 
+## TODO: save inference to history
+
 dispose(w$win)
 
 ## --- Figure 5: Spearate columns
@@ -154,6 +156,8 @@ w$ok_button$invoke_change_handler()
 
 ui$ctrlWidget$V1box$set_value("stype")
 w <- iNZight:::iNZGetSummary(ui)
+
+## TODO: save summary to history
 
 capture("07_survey_summary")
 
