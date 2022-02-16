@@ -193,7 +193,7 @@ tsMod$close()
 
 ## -- grab script ...
 
-writeLines(ui$rhistory$get(), file.path(DIR, "session_script.R"))
+writeLines(ui$rhistory$get(), file.path("images", DIR, "session_script.R"))
 
 
 ## --- Figure 10: Class reference
