@@ -9,7 +9,8 @@ if (!ui$preferences$dev.features ||
 }
 
 ui$close()
-ui <- iNZight()
+ui <- iNZight(census.at.school.500)
+ui$ctrlWidget$V1box$set_value("travel")
 
 ## -- Figure 1: iNZight GUI landing page
 
@@ -41,8 +42,9 @@ if (!file.exists("Gapminder.csv"))
 w <- iNZight:::iNZImportWin(ui)
 w$fname <- "Gapminder.csv"
 w$setfile()
-Sys.sleep(1)
 visible(w$advGp) <- TRUE
+
+Sys.sleep(2)
 
 capture("02_import_data")
 
@@ -91,7 +93,7 @@ add_rect(
 ## -- Figure 4: Get Inference
 
 ui$getActiveDoc()$setSettings(
-    list(colby = NULL, sizeby = NULL, transform = NULL)
+    list(colby = NULL, sizeby = NULL, transform = NULL, xlab = NULL)
 )
 ui$ctrlWidget$V2box$set_value("Region")
 ui$ctrlWidget$ctrlGp$children[[1]]$children[[14]]$set_value("[2004]")
@@ -102,22 +104,18 @@ size(w$win) <- c(850, 790)
 
 capture("04_get_inference")
 
-## TODO: save inference to history
-
+w$store_btn$invoke_change_handler()
 dispose(w$win)
 
 ## --- Figure 5: Spearate columns
 
-## TODO: FIX THIS ONE TOO
 w <- iNZight:::iNZSeparateWin(ui)
 w$var1$set_value("Region.Geo")
 w$var2$set_value(" - ")
+w$sep <- " - "
 w$leftCol$set_value("main_region")
 w$rightCol$set_value("part_region")
-w$var1$invoke_change_handler()
-w$var2$invoke_change_handler()
-
-stop("YOU NEED TO FIX THIS")
+w$updateView()
 
 capture("05_separate_cols")
 
@@ -157,10 +155,9 @@ w$ok_button$invoke_change_handler()
 ui$ctrlWidget$V1box$set_value("stype")
 w <- iNZight:::iNZGetSummary(ui)
 
-## TODO: save summary to history
-
 capture("07_survey_summary")
 
+w$store_btn$invoke_change_handler()
 dispose(w$win)
 
 
@@ -197,7 +194,10 @@ tsMod$close()
 
 ## -- grab script ...
 
-writeLines(ui$rhistory$get(), file.path("images", DIR, "session_script.R"))
+history <- ui$rhistory$get()
+history <- gsub("create survey design object ",
+    "create survey design object\n", history)
+writeLines(, file.path("images", DIR, "session_script.R"))
 
 
 ## --- Figure 10: Class reference
