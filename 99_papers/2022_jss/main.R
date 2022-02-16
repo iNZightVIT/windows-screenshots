@@ -106,6 +106,7 @@ dispose(w$win)
 
 ## --- Figure 5: Spearate columns
 
+## TODO: FIX THIS ONE TOO
 w <- iNZight:::iNZSeparateWin(ui)
 w$var1$set_value("Region.Geo")
 w$var2$set_value(" - ")
@@ -113,6 +114,8 @@ w$leftCol$set_value("main_region")
 w$rightCol$set_value("part_region")
 w$var1$invoke_change_handler()
 w$var2$invoke_change_handler()
+
+stop("YOU NEED TO FIX THIS")
 
 capture("05_separate_cols")
 
