@@ -76,8 +76,10 @@ ui$getActiveDoc()$setSettings(
     )
 )
 ui$code_panel$store_code()
-
+w <- iNZight:::iNZPlotMod$new(ui)
+Sys.sleep(1)
 capture("03_plot_modifications")
+ui$close_module()
 
 add_rect(
     "03_plot_modifications",
